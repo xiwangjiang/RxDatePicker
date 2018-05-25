@@ -16,3 +16,16 @@ dependencies {
 }
 ~~~
 # 使用
+~~~
+SimpleDateFormat sdf = new SimpleDateFormat("yyyy-MM-dd HH:mm", Locale.CHINA);
+ String mNow = sdf.format(new Date());
+ mRxDatePicker1 = new RxDatePicker(this, new RxDatePicker.ResultHandler() {
+            @Override
+            public void handle(String time) { // 回调接口，获得选中的时间
+                mTvDate.setText(time.split(" ")[0]);
+            }
+        }, "2010-01-01 00:00", mNow); // 初始化日期格式请用：yyyy-MM-dd HH:mm，否则不能正常运行
+        mRxDatePicker1.showSpecificTime(false); // 不显示时和分
+        mRxDatePicker1.setIsLoop(false); // 不允许循环滚动
+	mRxDatePicker1.show(mTvDate.getText().toString());
+~~~
