@@ -1,5 +1,9 @@
 # RxDatePicker
 安卓自定义DatePicker日期选择器
+ 
+# 先上图
+![22.gif](https://upload-images.jianshu.io/upload_images/10151120-278bae2f92f88e33.gif?imageMogr2/auto-orient/strip)
+ 
 # 框架引入
 ### 先在 build.gradle(Project:XXXX) 的 repositories 添加:
 ~~~
