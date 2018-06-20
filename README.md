@@ -16,7 +16,7 @@ repositories {
 ### 然后在 build.gradle(Module:app) 的 dependencies 添加: 
 ~~~
 dependencies {
-	implementation 'com.github.404NotFuond:RxDatePicker:1.0.0'
+	 implementation 'com.github.404NotFuond:RxDatePicker:1.0.1'
 }
 ~~~
 # 使用
