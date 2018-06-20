@@ -10,7 +10,9 @@ import android.view.View;
 import android.view.Window;
 import android.view.WindowManager;
 import android.widget.TextView;
+
 import com.taopao.rxdatepicker.R;
+
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
 import java.util.ArrayList;
@@ -54,7 +56,7 @@ public class RxDatePicker {
     private int startYear, startMonth, startDay, startHour, startMinute, endYear, endMonth, endDay, endHour, endMinute;
     private boolean spanYear, spanMon, spanDay, spanHour, spanMin;
     private Calendar selectedCalender, startCalendar, endCalendar;
-    private TextView tv_cancle, tv_select, hour_text, minute_text;
+    private TextView tv_cancle, tv_select, hour_text, minute_text, day_text, month_text;
 
     public RxDatePicker(Context context, ResultHandler resultHandler, String startDate, String endDate) {
         if (isValidDate(startDate, "yyyy-MM-dd HH:mm") && isValidDate(endDate, "yyyy-MM-dd HH:mm")) {
@@ -102,6 +104,8 @@ public class RxDatePicker {
         tv_cancle = (TextView) datePickerDialog.findViewById(R.id.tv_cancle);
         tv_select = (TextView) datePickerDialog.findViewById(R.id.tv_select);
         hour_text = (TextView) datePickerDialog.findViewById(R.id.hour_text);
+        month_text = (TextView) datePickerDialog.findViewById(R.id.month_text);
+        day_text = (TextView) datePickerDialog.findViewById(R.id.day_text);
         minute_text = (TextView) datePickerDialog.findViewById(R.id.minute_text);
 
         tv_cancle.setOnClickListener(new View.OnClickListener() {
@@ -509,6 +513,27 @@ public class RxDatePicker {
                 minute_text.setVisibility(View.GONE);
             }
         }
+    }
+
+
+    /**
+     * 设置日期控件只显示年
+     */
+    public void showOnlyYear() {
+        if (canAccess) {
+            disScrollUnit(SCROLL_TYPE.HOUR, SCROLL_TYPE.MINUTE);
+            hour_pv.setVisibility(View.GONE);
+            hour_text.setVisibility(View.GONE);
+            minute_pv.setVisibility(View.GONE);
+            minute_text.setVisibility(View.GONE);
+
+            month_pv.setVisibility(View.GONE);
+            day_pv.setVisibility(View.GONE);
+
+            month_text.setVisibility(View.GONE);
+            day_text.setVisibility(View.GONE);
+        }
+
     }
 
     /**

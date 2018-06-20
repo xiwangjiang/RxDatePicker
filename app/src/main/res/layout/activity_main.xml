@@ -8,18 +8,28 @@
     tools:context="com.taopao.rxdatepicker.MainActivity">
 
     <TextView
-        android:padding="10dp"
-        android:gravity="center"
         android:id="@+id/tv_time"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:gravity="center"
+        android:padding="10dp"
         android:text="带时间" />
 
     <TextView
-        android:padding="10dp"
-        android:gravity="center"
         android:id="@+id/tv_date"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:gravity="center"
+        android:padding="10dp"
         android:text="不带时间" />
+
+
+    <TextView
+        android:id="@+id/tv_year"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center"
+        android:padding="10dp"
+        android:text="年" />
+
 </LinearLayout>
